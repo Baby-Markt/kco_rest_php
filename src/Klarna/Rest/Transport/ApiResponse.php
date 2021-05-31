@@ -119,7 +119,7 @@ class ApiResponse
      */
     public function setHeader($name, $values)
     {
-        $this->headers[$name] = $values;
+        $this->headers[ucwords($name, '-_')] = $values;
         return $this;
     }
 
