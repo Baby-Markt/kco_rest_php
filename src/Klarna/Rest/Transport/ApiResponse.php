@@ -103,10 +103,10 @@ class ApiResponse
          * @see \Klarna\Rest\Transport\CURLConnector::parseHeaders
          */
         foreach ($headers as $key => $value) {
-            $headers[ucwords($key, '-_')][] = $value;
+            $uppercaseHeaders[ucwords($key, '-_')][] = $value;
         }
 
-        $this->headers = $headers;
+        $this->headers = $uppercaseHeaders;
         return $this;
     }
 
