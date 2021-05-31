@@ -98,12 +98,14 @@ class ApiResponse
      */
     public function setHeaders($headers)
     {
+        $uppercaseHeaders = [];
+
         /**
          * Uppercase the first character of the Header
          * @see \Klarna\Rest\Transport\CURLConnector::parseHeaders
          */
         foreach ($headers as $key => $value) {
-            $uppercaseHeaders[ucwords($key, '-_')][] = $value;
+            $uppercaseHeaders[ucwords($key, '-_')] = $value;
         }
 
         $this->headers = $uppercaseHeaders;
